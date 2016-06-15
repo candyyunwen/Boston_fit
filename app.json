@@ -1,7 +1,7 @@
 {
     "name": "Boston fit",
     "description": "Boston fit",
-    "repository": "https://github.com/candyyunwen/Boston fit",
+    "repository": "https://github.com/candyyunwen/Boston_fit",
     "keywords": ["Python","scikit-learn"],
     "env": {
         "SECRET_TOKEN": {
