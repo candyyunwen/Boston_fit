@@ -1,0 +1,12 @@
+{
+    "name": "Boston fit",
+    "description": "Boston fit",
+    "repository": "https://github.com/candyyunwen/Boston fit",
+    "keywords": ["Python","scikit-learn"],
+    "env": {
+        "SECRET_TOKEN": {
+          "description": "A secret key for verifying the integrity of signed cookies.",
+          "generator": "secret"
+      }
+    }
+}
