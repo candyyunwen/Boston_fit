@@ -120,3 +120,31 @@ def Boston_result(request):
         'app/boston_result.html',
         context_instance = RequestContext(request, result_dict)
        )
+
+from app.forms import BootstrapCurveFittingForm
+def Iris(request):
+
+    return render(
+        request,
+        'app/fitting_input2.html',
+        context_instance = RequestContext(request,
+        {
+            'title':'Iris Fitting Input',
+            'form': BootstrapCurveFittingForm,
+               })
+    )
+
+def Iris_result(request):
+    import pyFitMR.Iris_lib as Iris_lib
+    sepal_length = request.POST.get('sepal_length')
+    sepal_width = request.POST.get('sepal_width')
+    petal_length = request.POST.get('petal_length')
+    petal_width = request.POST.get('petal_width')
+
+    result_dict = Iris_lib.Irisfit(sepal_length,sepal_width,petal_length,petal_width)
+
+    return render(
+        request,
+        'app/Iris_result.html',
+        context_instance = RequestContext(request, result_dict)
+       )

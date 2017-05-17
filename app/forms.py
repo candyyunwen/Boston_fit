@@ -40,3 +40,8 @@ class BootstrapCurveFittingForm(forms.Form):
     ptratio_value = forms.CharField(label='ptratio_value',max_length=254,widget=forms.TextInput(attrs={'size':'100','placeholder':' EX:22.0'}))
     b_value = forms.CharField(label='b_value',max_length=254,widget=forms.TextInput(attrs={'size':'100','placeholder':' EX:396.9'}))
     lstat_value = forms.CharField(label='lstat_value',max_length=254,widget=forms.TextInput(attrs={'size':'100','placeholder':' EX:37.97'}))
+
+    sepal_length = forms.CharField(label='sepal_length',max_length=254,widget=forms.TextInput(attrs={'size':'100','placeholder':' '}))
+    sepal_width = forms.CharField(label='sepal_width',max_length=254,widget=forms.TextInput(attrs={'size':'100','placeholder':' '}))
+    petal_length = forms.CharField(label='petal_length',max_length=254,widget=forms.TextInput(attrs={'size':'100','placeholder':' '}))
+    petal_width = forms.CharField(label='petal_width',max_length=254,widget=forms.TextInput(attrs={'size':'100','placeholder':' '}))

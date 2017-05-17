@@ -1,0 +1,79 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+
+<h2>{{ title }}</h2>
+<div class="row">
+    <div class="col-md-8">
+        <section id="loginForm">
+            <form action="{% url 'Iris_result' %}" method="post" class="form-horizontal">
+                {% csrf_token %}
+                <h4>Fill in features to predict the types of flowers.</h4>
+                <hr />
+                <div class="form-group">
+                    <label for="sepal_length" class="col-md-2 control-label">sepal length (cm)</label>
+                    <div class="col-md-10" >
+                      {{ form.sepal_length }}</div>
+                </div>
+                <div class="form-group">
+                    <label for="sepal_width" class="col-md-2 control-label">sepal width (cm)</label>
+                    <div class="col-md-10">
+                      {{ form.sepal_width }}</div>
+                </div>
+                <div class="form-group">
+                    <label for="petal_length" class="col-md-2 control-label">petal length (cm)</label>
+                    <div class="col-md-10">
+                      {{ form.petal_length }}</div>
+                </div>
+                <div class="form-group">
+                    <label for="petal_width" class="col-md-2 control-label">petal width (cm)</label>
+                    <div class="col-md-10">
+                      {{ form.petal_width }}</div>
+                </div>
+
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="hidden" name="next" value="/" />
+                        <input type="submit" value="Submit" class="btn btn-default"  style="font-size:125%"/>
+                    </div>
+                </div>
+                {% if form.errors %}
+                <p class="validation-summary-errors">Please enter a correct user name and password.</p>
+                {% endif %}
+            </form>
+        </section>
+    </div>
+    <div class="col-md-4">
+        <section id="socialLoginForm"></section>
+    </div>
+
+
+
+</div>
+
+<p>
+Try it!
+<p>
+Simply copy the following test data into the input boxes and click submit.
+<p>
+
+Test data:
+<p>
+feature_names = [sepal_length,sepal_width,petal_length,petal_width]
+
+<p>
+data = []
+<p>
+
+
+<p>
+Provided by Yun-Wen Wang & Teng-Yi Huang
+{% endblock %}
+
+
+{% block scripts %}
+
+    {% load staticfiles %}
+<script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
+
+{% endblock %}
